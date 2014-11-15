@@ -10,9 +10,9 @@ namespace XML_Based_Modules
     [XmlRoot()]
     public class ModularDataEntries
     {
-        private ModularData[] dataModules;
+        private List<ModularData> dataModules;
 
-        public ModularData[] DataModules
+        public List<ModularData> DataModules
         {
             get { return dataModules; }
             set { dataModules = value; }
