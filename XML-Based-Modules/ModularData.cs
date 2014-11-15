@@ -3,23 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace XML_Based_Modules
 {
     class ModularData
     {
-        string Name;
-        int Id;
-        string Description;
-        string Type;
-        public ModularData() { }
-        public ModularData(string name, int id, string description, string type)
+        private string name;
+        private int id;
+        private string description;
+        private string dataType;
+
+        [XmlAttribute]
+        public string Name
         {
-            Name = name;
-            Id = id;
-            Description = description;
-            Type = type;
+            get { return name; }
+            set { name = value; }
         }
+
+        [XmlAttribute]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        [XmlAttribute]
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
+
+        [XmlAttribute]
+        public string DataType
+        {
+            get { return dataType; }
+            set { dataType = value; }
+        }
+
         
     }
 }
