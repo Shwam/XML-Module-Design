@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 namespace XML_Based_Modules
 {
     [XmlRoot()]
-    public class ModularDataEntries
+    public class ModularDateEntries
     {
         private ModularData[] dataModules;
 
