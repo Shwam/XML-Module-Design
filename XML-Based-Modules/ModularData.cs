@@ -26,6 +26,15 @@ namespace XML_Based_Modules
         private string description;
         private string dataType;
 
+        public ModularData() { }
+        public ModularData(string _name, int _id, string _description, string _dataType)
+        {
+            name = _name;
+            id = _id;
+            description = _description;
+            dataType = _dataType;
+        }
+
         [XmlAttribute]
         public string Name
         {
