@@ -22,6 +22,7 @@ namespace XML_Based_Modules
             XmlDocument xdoc = new XmlDocument();
             xdoc.Load(path + "telemetry.xml");
             string xml = xdoc.InnerXml;
+            WriteLine("Loaded default telemetry data");
 
             XmlSerializer serializer = new XmlSerializer(typeof(ModularDataEntries));
             xi = (ModularDataEntries)serializer.Deserialize(new StringReader(xml));
@@ -90,6 +91,7 @@ namespace XML_Based_Modules
             {
                 ModularData item = (new ModularData(_name.Text, id, _desc.Text, _datatype.Text));
                 xi.DataModules.Add(item);
+                WriteLine("Added " + item.Name + "to telemetry data");
             }
 
         }
