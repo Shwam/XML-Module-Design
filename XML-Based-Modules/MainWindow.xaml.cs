@@ -94,5 +94,13 @@ namespace XML_Based_Modules
             file.Close();
         }
 
+        private void _remove_Click(object sender, RoutedEventArgs e)
+        {
+            if (lb.SelectedValue != null)
+            {
+                xi.DataModules.Remove(lb.SelectedValue as ModularData);
+            }
+        }
+
     }
 }
