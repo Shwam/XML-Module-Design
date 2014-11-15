@@ -61,7 +61,7 @@ namespace XML_Based_Modules
         {
             if (xi == null)
             {
-                WriteLine("First load the modules");
+                WriteLine("First load the telemetry data [Press Load]");
                 return;
             }
             int id = -1;
