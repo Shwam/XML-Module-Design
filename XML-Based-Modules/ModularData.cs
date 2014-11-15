@@ -19,7 +19,7 @@ namespace XML_Based_Modules
         }
     }
 
-    class ModularData
+    public class ModularData
     {
         private string name;
         private int id;
