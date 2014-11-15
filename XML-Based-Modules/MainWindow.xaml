@@ -13,13 +13,14 @@
         </DataTemplate>
     </Window.Resources>
     <Grid>
-        <TextBox Name="_name" Margin="20,10" Width="100" HorizontalAlignment="Left" VerticalAlignment ="Top">Name</TextBox>
-        <TextBox Name="_id" Margin="20,30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top">ID#</TextBox>
-        <TextBox Name="_desc" Margin="20,50" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top">Description</TextBox>
-        <TextBox Name="_datatype" Margin="20,70" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top">DataType</TextBox>
-        <Button x:Name="_add" Click="_add_Click" Margin="20,90" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top">Add</Button>
-        <Button x:Name="_save" Click="_save_Click" Margin="70,90" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top">Save</Button>
-
-        <ListView Name="lb" SelectionMode="Single" ItemsSource="{Binding}" ItemTemplate="{StaticResource mod}" VerticalAlignment="Bottom" Height="Auto"/>
+        <StackPanel VerticalAlignment="Top" Height="Auto">
+            <TextBox Name="_name" Width="100" HorizontalAlignment="Left">Name</TextBox>
+            <TextBox Name="_id" Width="100" HorizontalAlignment="Left">ID#</TextBox>
+            <TextBox Name="_desc" Width="100" HorizontalAlignment="Left">Description</TextBox>
+            <TextBox Name="_datatype" Width="100" HorizontalAlignment="Left">DataType</TextBox>
+            <Button x:Name="_add" Click="_add_Click" Width="50" HorizontalAlignment="Left">Add</Button>
+            <Button x:Name="_save" Height="20" Click="_save_Click" Width="50" HorizontalAlignment="Right" VerticalAlignment="Bottom">Save</Button>
+            <ListView Name="lb" SelectionMode="Single" ItemsSource="{Binding}" ItemTemplate="{StaticResource mod}" VerticalAlignment="Bottom" Height="Auto"/>
+        </StackPanel>
     </Grid>
 </Window>

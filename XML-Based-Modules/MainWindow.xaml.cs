@@ -32,7 +32,9 @@ namespace XML_Based_Modules
 
         private void _add_Click(object sender, RoutedEventArgs e)
         {
-            xi.DataModules.Add(new ModularData(_name.Text, 0, _desc.Text, _datatype.Text));
+
+            ModularData item = (new ModularData(_name.Text, 0, _desc.Text, _datatype.Text));
+            xi.DataModules.Add(item);
         }
 
         private void _save_Click(object sender, RoutedEventArgs e)
