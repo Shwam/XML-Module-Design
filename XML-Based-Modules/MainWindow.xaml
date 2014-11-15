@@ -1,8 +1,18 @@
 ﻿<Window x:Class="XML_Based_Modules.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local ="clr-namespace:XML_Based_Modules"
         Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <local:ModularData x:Key="modularData"/>
+        <DataTemplate x:Key="mod">
+            <StackPanel>
+                <TextBlock Text="{Binding Path=Name}" />
+                <TextBlock Text="{Binding Path=Id}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        
+        <ListBox Name="lb" Height="200" SelectionMode="Single" ItemsSource="{Binding}" ItemTemplate="{StaticResource mod}" Margin="0,125,0,-6"/>
     </Grid>
 </Window>
