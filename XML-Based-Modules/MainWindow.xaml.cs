@@ -23,7 +23,7 @@ namespace XML_Based_Modules
         private void _loadModules(object sender, RoutedEventArgs e)
         {
             XmlDocument xdoc = new XmlDocument();
-            xdoc.Load(path + "SampleInput.xml");
+            xdoc.Load(path + "ModuleSave.xml");
             string xml = xdoc.InnerXml;
 
             XmlSerializer serializer = new XmlSerializer(typeof(ModularDataEntries));
