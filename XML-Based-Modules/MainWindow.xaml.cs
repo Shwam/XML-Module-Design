@@ -38,6 +38,7 @@ namespace XML_Based_Modules
             XmlSerializer serializer = new XmlSerializer(typeof(ModularDataEntries));
             xi = (ModularDataEntries)serializer.Deserialize(new StringReader(xml));
             lb.DataContext = xi.DataModules;
+            WriteLine("Loaded custom telemetry data");
         }
 
         private void WriteLine(string s)
