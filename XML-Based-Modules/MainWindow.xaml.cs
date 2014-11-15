@@ -18,6 +18,14 @@ namespace XML_Based_Modules
         public MainWindow()
         {
             InitializeComponent();
+
+            XmlDocument xdoc = new XmlDocument();
+            xdoc.Load(path + "telemetry.xml");
+            string xml = xdoc.InnerXml;
+
+            XmlSerializer serializer = new XmlSerializer(typeof(ModularDataEntries));
+            xi = (ModularDataEntries)serializer.Deserialize(new StringReader(xml));
+            lb.DataContext = xi.DataModules;
         }
 
         private void _loadModules(object sender, RoutedEventArgs e)
