@@ -38,6 +38,8 @@ namespace XML_Based_Modules
             System.IO.StreamWriter file = new System.IO.StreamWriter(path + "ModuleSave.xml");
             serializer.Serialize(file, xi);
             file.Close();
+
+            lb.DataContext = xi.DataModules;
         }
     }
 }
