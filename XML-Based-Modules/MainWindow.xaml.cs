@@ -32,9 +32,25 @@ namespace XML_Based_Modules
 
         private void _add_Click(object sender, RoutedEventArgs e)
         {
+            int id = -1;
+            try
+            {
+                id = Convert.ToInt32(_id.Text);
+            }
+            catch (FormatException _e)
+            {
+                Console.Write(_e);
+            }
+            catch (OverflowException _e)
+            {
+                Console.Write(_e);
+            }
 
-            ModularData item = (new ModularData(_name.Text, 0, _desc.Text, _datatype.Text));
-            xi.DataModules.Add(item);
+            if (id > 0)
+            {
+                ModularData item = (new ModularData(_name.Text, id, _desc.Text, _datatype.Text));
+                xi.DataModules.Add(item);
+            }
         }
 
         private void _save_Click(object sender, RoutedEventArgs e)
