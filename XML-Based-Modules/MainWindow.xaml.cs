@@ -12,9 +12,10 @@ namespace XML_Based_Modules
     public partial class MainWindow : Window
     {
         public ModularDataEntries xi;
+        public string path = Directory.GetCurrentDirectory() + "../../../";
+
         public MainWindow()
         {
-            string path = Directory.GetCurrentDirectory() + "../../../";
             XmlDocument xdoc = new XmlDocument();
             xdoc.Load(path + "SampleInput.xml");
             string xml = xdoc.InnerXml;
@@ -24,9 +25,7 @@ namespace XML_Based_Modules
 
             InitializeComponent();
 
-            System.IO.StreamWriter file = new System.IO.StreamWriter(path + "ModuleSave.xml");
-            serializer.Serialize(file, xi);
-            file.Close();
+            
 
             lb.DataContext = xi.DataModules;
         }
@@ -34,6 +33,14 @@ namespace XML_Based_Modules
         private void _add_Click(object sender, RoutedEventArgs e)
         {
             xi.DataModules.Add(new ModularData(_name.Text, 0, _desc.Text, _datatype.Text));
+        }
+
+        private void _save_Click(object sender, RoutedEventArgs e)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(ModularDataEntries));
+            System.IO.StreamWriter file = new System.IO.StreamWriter(path + "ModuleSave.xml");
+            serializer.Serialize(file, xi);
+            file.Close();
         }
 
     }

@@ -18,6 +18,7 @@
         <TextBox Name="_desc" Margin="20,50" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top">Description</TextBox>
         <TextBox Name="_datatype" Margin="20,70" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top">DataType</TextBox>
         <Button x:Name="_add" Click="_add_Click" Margin="20,90" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top">Add</Button>
+        <Button x:Name="_save" Click="_save_Click" Margin="70,90" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top">Save</Button>
 
         <ListView Name="lb" SelectionMode="Single" ItemsSource="{Binding}" ItemTemplate="{StaticResource mod}" VerticalAlignment="Bottom" Height="Auto"/>
     </Grid>
