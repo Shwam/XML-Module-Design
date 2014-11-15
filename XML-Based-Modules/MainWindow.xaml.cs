@@ -16,18 +16,19 @@ namespace XML_Based_Modules
 
         public MainWindow()
         {
+            InitializeComponent();
+        }
+
+        private void _loadModules(object sender, RoutedEventArgs e)
+        {
             XmlDocument xdoc = new XmlDocument();
             xdoc.Load(path + "SampleInput.xml");
             string xml = xdoc.InnerXml;
 
             XmlSerializer serializer = new XmlSerializer(typeof(ModularDataEntries));
             xi = (ModularDataEntries)serializer.Deserialize(new StringReader(xml));
-
-            InitializeComponent();
-
-            
-
             lb.DataContext = xi.DataModules;
+
         }
 
         private void _add_Click(object sender, RoutedEventArgs e)
