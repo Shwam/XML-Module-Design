@@ -22,6 +22,8 @@ namespace XML_Based_Modules
     {
         public MainWindow()
         {
+            string path = Directory.GetCurrentDirectory() + "../../../";
+
             InitializeComponent();
         }
     }
