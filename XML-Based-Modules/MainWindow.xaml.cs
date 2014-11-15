@@ -1,5 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Windows;
+using System.Xml;
 
 namespace XML_Based_Modules
 {
@@ -11,7 +13,9 @@ namespace XML_Based_Modules
         public MainWindow()
         {
             string path = Directory.GetCurrentDirectory() + "../../../";
-
+            XmlDocument xdoc = new XmlDocument();
+            xdoc.Load(path + "SampleInput.xml");
+            Console.WriteLine(xdoc.InnerXml);
             InitializeComponent();
         }
     }
