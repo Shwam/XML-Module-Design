@@ -64,6 +64,15 @@ namespace XML_Based_Modules
             set { dataType = value; }
         }
 
+        public override string ToString()
+        {
+            string s = name + "\n";
+            s += id + "\n";
+            s += description + "\n";
+            s += dataType;
+            return s;
+        }
+
         
     }
 }

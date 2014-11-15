@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -31,8 +32,38 @@ namespace XML_Based_Modules
 
         }
 
+        private void WriteLine(string s)
+        {
+            _console.Text += s;
+            _console.Text += "\n";
+        }
+
+        private void Clear()
+        {
+            _console.Text = "";
+        }
+
+        private void _lb_select(object sender, RoutedEventArgs e)
+        {
+            Clear();
+            if (lb.SelectedValue != null)
+            {
+                WriteLine(lb.SelectedValue.ToString());
+            }
+        }
+
+        private void _clear_Click(object sender, RoutedEventArgs e)
+        {
+            Clear();
+        }
+
         private void _add_Click(object sender, RoutedEventArgs e)
         {
+            if (xi == null)
+            {
+                WriteLine("First load the modules");
+                return;
+            }
             int id = -1;
             try
             {
@@ -40,11 +71,11 @@ namespace XML_Based_Modules
             }
             catch (FormatException _e)
             {
-                Console.Write(_e);
+                WriteLine("id FormatException (please enter a number)");
             }
             catch (OverflowException _e)
             {
-                Console.Write(_e);
+                WriteLine("id OverflowException (int32)");
             }
 
             if (id > 0)
@@ -52,6 +83,7 @@ namespace XML_Based_Modules
                 ModularData item = (new ModularData(_name.Text, id, _desc.Text, _datatype.Text));
                 xi.DataModules.Add(item);
             }
+
         }
 
         private void _save_Click(object sender, RoutedEventArgs e)
