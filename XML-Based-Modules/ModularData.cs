@@ -7,6 +7,18 @@ using System.Xml.Serialization;
 
 namespace XML_Based_Modules
 {
+    [XmlRoot()]
+    public class ModularDataEntries
+    {
+        private ModularData[] dataModules;
+
+        public ModularData[] DataModules
+        {
+            get { return dataModules; }
+            set { dataModules = value; }
+        }
+    }
+
     class ModularData
     {
         private string name;
@@ -33,7 +45,6 @@ namespace XML_Based_Modules
             get { return description; }
             set { description = value; }
         }
-
         [XmlAttribute]
         public string DataType
         {
