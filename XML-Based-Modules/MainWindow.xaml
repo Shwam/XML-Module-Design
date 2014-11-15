@@ -6,13 +6,13 @@
     <Window.Resources>
         <local:ModularData x:Key="modularData"/>
         <DataTemplate x:Key="mod">
-            <StackPanel>
+            <StackPanel Background="AliceBlue">
                 <TextBlock Text="{Binding Path=Name}" />
-                <TextBlock Text="{Binding Path=Id}"/>
+                <TextBlock Text="{Binding Path=Id, StringFormat=Id: {0}}"/>
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
     <Grid>
-        <ListBox Name="lb" Height="200" SelectionMode="Single" ItemsSource="{Binding}" ItemTemplate="{StaticResource mod}" Margin="0,125,0,-6"/>
+        <ListView Name="lb" SelectionMode="Single" ItemsSource="{Binding}" ItemTemplate="{StaticResource mod}" VerticalAlignment="Bottom" Height="Auto"/>
     </Grid>
 </Window>
