@@ -24,7 +24,7 @@
         <Button x:Name="_clear" Height="20" Click="_clear_Click" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,72,0,0">Clear</Button>
         <Button x:Name="_load" Height="20" Click="_loadModules" Width="50" HorizontalAlignment="Right" VerticalAlignment="Top">Load</Button>
         <Button x:Name="_save" Height="20" Click="_save_Click" Width="50" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,20,0,0">Save</Button>
-        <Button x:Name="_remove" Height="92" Click="_remove_Click" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400,0,0,0">Remove</Button>
+        <Button x:Name="_remove" IsEnabled="False" Height="92" Click="_remove_Click" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400,0,0,0">Remove</Button>
         <ListView Name="lb" SelectionChanged="_lb_select" SelectionMode="Single" ItemsSource="{Binding}" ItemTemplate="{StaticResource mod}" VerticalAlignment="Bottom" Height="200"/>
 
     </Grid>

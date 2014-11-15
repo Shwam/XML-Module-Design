@@ -29,7 +29,6 @@ namespace XML_Based_Modules
             XmlSerializer serializer = new XmlSerializer(typeof(ModularDataEntries));
             xi = (ModularDataEntries)serializer.Deserialize(new StringReader(xml));
             lb.DataContext = xi.DataModules;
-
         }
 
         private void WriteLine(string s)
@@ -45,6 +44,7 @@ namespace XML_Based_Modules
 
         private void _lb_select(object sender, RoutedEventArgs e)
         {
+            _remove.IsEnabled = lb.SelectedValue != null;
             Clear();
             if (lb.SelectedValue != null)
             {
@@ -71,7 +71,7 @@ namespace XML_Based_Modules
             }
             catch (FormatException _e)
             {
-                WriteLine("id FormatException (please enter a number)");
+                WriteLine("id FormatException (please enter an ID number)");
             }
             catch (OverflowException _e)
             {
@@ -100,6 +100,8 @@ namespace XML_Based_Modules
             {
                 xi.DataModules.Remove(lb.SelectedValue as ModularData);
             }
+            _remove.IsEnabled = lb.SelectedValue != null;
+
         }
 
     }
