@@ -13,6 +13,12 @@
         </DataTemplate>
     </Window.Resources>
     <Grid>
+        <TextBox Name="_name" Margin="20,10" Width="100" HorizontalAlignment="Left" VerticalAlignment ="Top">Name</TextBox>
+        <TextBox Name="_id" Margin="20,30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top">ID#</TextBox>
+        <TextBox Name="_desc" Margin="20,50" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top">Description</TextBox>
+        <TextBox Name="_datatype" Margin="20,70" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top">DataType</TextBox>
+        <Button x:Name="_add" Click="_add_Click" Margin="20,90" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top">Add</Button>
+
         <ListView Name="lb" SelectionMode="Single" ItemsSource="{Binding}" ItemTemplate="{StaticResource mod}" VerticalAlignment="Bottom" Height="Auto"/>
     </Grid>
 </Window>
