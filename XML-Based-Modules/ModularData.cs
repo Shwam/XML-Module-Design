@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +12,14 @@ namespace XML_Based_Modules
     [XmlRoot()]
     public class ModularDataEntries
     {
-        private List<ModularData> dataModules;
+        private ObservableCollection<ModularData> dataModules;
 
-        public List<ModularData> DataModules
+        public ObservableCollection<ModularData> DataModules
         {
             get { return dataModules; }
             set { dataModules = value; }
         }
+
     }
 
     public class ModularData
@@ -59,6 +62,15 @@ namespace XML_Based_Modules
         {
             get { return dataType; }
             set { dataType = value; }
+        }
+
+        public override string ToString()
+        {
+            string s = name + "\n";
+            s += id + "\n";
+            s += description + "\n";
+            s += dataType;
+            return s;
         }
 
         
