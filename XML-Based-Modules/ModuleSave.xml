@@ -1,8 +1,336 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TelemetryMetaData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <TelemetryData>
-    <TelemetryItem Name="Left Motor" Id="4001" Description="0 is full reverse, 128 is stop. 255 is full forward" DataType="uint8" />
-    <TelemetryItem Name="Right Motor" Id="4002" Description="0 is full reverse, 128 is stop. 255 is full forward" DataType="uint8" />
-    <TelemetryItem Name="Drill Temperature" Id="6018" DataType="float" />
+    <TelemetryItem>
+      <Name>Message</Name>
+      <Id>0</Id>
+      <DataType>string</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Error Codes</Name>
+      <Id>0</Id>
+      <DataType>string</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>GPS Fix</Name>
+      <Id>1001</Id>
+      <Description>1 for fix, 0 for no fix</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Latitude</Name>
+      <Id>1002</Id>
+      <DataType>string</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Longitude</Name>
+      <Id>1003</Id>
+      <DataType>string</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Altitude</Name>
+      <Id>1004</Id>
+      <DataType>string</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Number of Satellites</Name>
+      <Id>1005</Id>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Turn on GPS Telemetry</Name>
+      <Id>1006</Id>
+      <Description>0 = off, 1 = on</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Wrist</Name>
+      <Id>2001</Id>
+      <Description>0 = counterclockwise, 1 = clockwise, 2 = down, 3 = up</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Elbow</Name>
+      <Id>2002</Id>
+      <Description>0 = counterclockwise, 1 = clockwise, 2 = down, 3 = up</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Linear Actuator</Name>
+      <Id>2003</Id>
+      <Description>0 = back, 1 = forward</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Base</Name>
+      <Id>2004</Id>
+      <Description>0 = counterclockwise, 1 = clockwise</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Reset Robotic Arm Board</Name>
+      <Id>2005</Id>
+      <Description>Just receiving the command, regardless of value, resets it</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Volt0</Name>
+      <Id>3001</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Volt1</Name>
+      <Id>3002</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Volt2</Name>
+      <Id>3003</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Volt3</Name>
+      <Id>3004</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Volt4</Name>
+      <Id>3005</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Volt5</Name>
+      <Id>3006</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Volt6</Name>
+      <Id>3007</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Temp0</Name>
+      <Id>3008</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Temp1</Name>
+      <Id>3009</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Temp2</Name>
+      <Id>3010</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Temp3</Name>
+      <Id>3011</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Temp4</Name>
+      <Id>3012</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Temp5</Name>
+      <Id>3013</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Temp6</Name>
+      <Id>3014</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Main_Bat_Cur</Name>
+      <Id>3015</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Drive Left</Name>
+      <Id>4001</Id>
+      <Description>0 is full reverse, 128 is stop. 255 is full forward</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Drive Right</Name>
+      <Id>4002</Id>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Ambient Temperature</Name>
+      <Id>5001</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Bus A Voltage</Name>
+      <Id>5002</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Bus B Voltage</Name>
+      <Id>5003</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Bus C Voltage</Name>
+      <Id>5004</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Input Voltage</Name>
+      <Id>5005</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Input Current</Name>
+      <Id>5006</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Active Power Telemetry</Name>
+      <Id>5007</Id>
+      <Description>1 is on, 0 is off</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Drill Speed</Name>
+      <Id>6001</Id>
+      <Description>0 - 255; 0 is stop</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Drill Direction</Name>
+      <Id>6002</Id>
+      <Description>1 is forward; 0 is reverse; any other values are forward</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Heater Power</Name>
+      <Id>6003</Id>
+      <Description>1 is on; 0 is off</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Thermo Readings</Name>
+      <Id>6004</Id>
+      <Description>1 is continous update; 0 stops updates</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Sensor Power</Name>
+      <Id>6005</Id>
+      <Description>1 is on; 0 is off</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Gas Readings</Name>
+      <Id>6006</Id>
+      <Description>1 is continous update; 0 stops updates</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Gripper</Name>
+      <Id>6007</Id>
+      <Description>0 for open, 1 for close</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>395 nm Light</Name>
+      <Id>6008</Id>
+      <Description>1 for on, 0 for off</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>440 nm Light</Name>
+      <Id>6009</Id>
+      <Description>1 for on, 0 for off</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Door Servo</Name>
+      <Id>6010</Id>
+      <Description>position. 255 for open, 0 for close</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Turn On Drill Sensor Data</Name>
+      <Id>6011</Id>
+      <Description>1 if on, 0 is off</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Red Light</Name>
+      <Id>6012</Id>
+      <Description>0 - 255; 0 is off, 255 is full on</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Green Light</Name>
+      <Id>6013</Id>
+      <Description>0 - 255; 0 is off, 255 is full on</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Blue Light</Name>
+      <Id>6014</Id>
+      <Description>0 - 255; 0 is off, 255 is full on</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Drill Hydrogen Reading</Name>
+      <Id>6015</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Drill Methane Reading</Name>
+      <Id>6016</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Drill Ammonia Reading</Name>
+      <Id>6017</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Drill Temp</Name>
+      <Id>6018</Id>
+      <DataType>Float</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Drill Actual Speed</Name>
+      <Id>6019</Id>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Drill Goal Current</Name>
+      <Id>6020</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Drill Actual Current</Name>
+      <Id>6021</Id>
+      <DataType>uint16</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Camera Pitch</Name>
+      <Id>6022</Id>
+      <Description>0-255</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Camera Yaw</Name>
+      <Id>6023</Id>
+      <Description>0-255</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
+    <TelemetryItem>
+      <Name>Camera Roll</Name>
+      <Id>6024</Id>
+      <Description>0-255</Description>
+      <DataType>uint8</DataType>
+    </TelemetryItem>
   </TelemetryData>
 </TelemetryMetaData>
