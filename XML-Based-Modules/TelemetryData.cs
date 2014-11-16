@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,26 +10,27 @@ using System.Xml.Serialization;
 namespace XML_Based_Modules
 {
     [XmlRoot()]
-    public class ModularDataEntries
+    public class TelemetryMetaData
     {
-        private List<ModularData> dataModules;
+        private ObservableCollection<TelemetryItem> telemetryItems;
 
-        public List<ModularData> DataModules
+        public ObservableCollection<TelemetryItem> TelemetryData
         {
-            get { return dataModules; }
-            set { dataModules = value; }
+            get { return telemetryItems; }
+            set { telemetryItems = value; }
         }
+
     }
 
-    public class ModularData
+    public class TelemetryItem
     {
         private string name;
         private int id;
         private string description;
         private string dataType;
 
-        public ModularData() { }
-        public ModularData(string _name, int _id, string _description, string _dataType)
+        public TelemetryItem() { }
+        public TelemetryItem(string _name, int _id, string _description, string _dataType)
         {
             name = _name;
             id = _id;
@@ -59,6 +62,15 @@ namespace XML_Based_Modules
         {
             get { return dataType; }
             set { dataType = value; }
+        }
+
+        public override string ToString()
+        {
+            string s = name + "\n";
+            s += id + "\n";
+            s += description + "\n";
+            s += dataType;
+            return s;
         }
 
         
