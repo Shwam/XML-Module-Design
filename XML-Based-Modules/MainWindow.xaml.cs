@@ -90,7 +90,7 @@ namespace XML_Based_Modules
 
             if (id > 0)
             {
-                ModularData item = (new ModularData(_name.Text, id, _desc.Text, _datatype.Text));
+                TelemetryItem item = (new TelemetryItem(_name.Text, id, _desc.Text, _datatype.Text));
                 xi.DataModules.Add(item);
                 WriteLine("Added " + item.Name + "to telemetry data");
             }
@@ -109,7 +109,7 @@ namespace XML_Based_Modules
         {
             if (lb.SelectedValue != null)
             {
-                xi.DataModules.Remove(lb.SelectedValue as ModularData);
+                xi.DataModules.Remove(lb.SelectedValue as TelemetryItem);
             }
             _remove.IsEnabled = lb.SelectedValue != null;
 
