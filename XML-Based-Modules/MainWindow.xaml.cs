@@ -26,7 +26,7 @@ namespace XML_Based_Modules
 
             XmlSerializer serializer = new XmlSerializer(typeof(ModularDataEntries));
             xi = (ModularDataEntries)serializer.Deserialize(new StringReader(xml));
-            lb.DataContext = xi.DataModules;
+            lb.DataContext = xi.TelemetryData;
         }
 
         private void _loadModules(object sender, RoutedEventArgs e)
@@ -37,7 +37,7 @@ namespace XML_Based_Modules
 
             XmlSerializer serializer = new XmlSerializer(typeof(ModularDataEntries));
             xi = (ModularDataEntries)serializer.Deserialize(new StringReader(xml));
-            lb.DataContext = xi.DataModules;
+            lb.DataContext = xi.TelemetryData;
             WriteLine("Loaded custom telemetry data");
         }
 
@@ -91,7 +91,7 @@ namespace XML_Based_Modules
             if (id > 0)
             {
                 TelemetryItem item = (new TelemetryItem(_name.Text, id, _desc.Text, _datatype.Text));
-                xi.DataModules.Add(item);
+                xi.TelemetryData.Add(item);
                 WriteLine("Added " + item.Name + "to telemetry data");
             }
 
@@ -109,7 +109,7 @@ namespace XML_Based_Modules
         {
             if (lb.SelectedValue != null)
             {
-                xi.DataModules.Remove(lb.SelectedValue as TelemetryItem);
+                xi.TelemetryData.Remove(lb.SelectedValue as TelemetryItem);
             }
             _remove.IsEnabled = lb.SelectedValue != null;
 

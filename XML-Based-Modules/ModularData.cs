@@ -12,12 +12,12 @@ namespace XML_Based_Modules
     [XmlRoot()]
     public class ModularDataEntries
     {
-        private ObservableCollection<TelemetryItem> dataModules;
+        private ObservableCollection<TelemetryItem> telemetryItems;
 
-        public ObservableCollection<TelemetryItem> DataModules
+        public ObservableCollection<TelemetryItem> TelemetryData
         {
-            get { return dataModules; }
-            set { dataModules = value; }
+            get { return telemetryItems; }
+            set { telemetryItems = value; }
         }
 
     }
