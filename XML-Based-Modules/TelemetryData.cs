@@ -10,27 +10,27 @@ using System.Xml.Serialization;
 namespace XML_Based_Modules
 {
     [XmlRoot()]
-    public class ModularDataEntries
+    public class TelemetryMetaData
     {
-        private ObservableCollection<ModularData> dataModules;
+        private ObservableCollection<TelemetryItem> telemetryItems;
 
-        public ObservableCollection<ModularData> DataModules
+        public ObservableCollection<TelemetryItem> TelemetryData
         {
-            get { return dataModules; }
-            set { dataModules = value; }
+            get { return telemetryItems; }
+            set { telemetryItems = value; }
         }
 
     }
 
-    public class ModularData
+    public class TelemetryItem
     {
         private string name;
         private int id;
         private string description;
         private string dataType;
 
-        public ModularData() { }
-        public ModularData(string _name, int _id, string _description, string _dataType)
+        public TelemetryItem() { }
+        public TelemetryItem(string _name, int _id, string _description, string _dataType)
         {
             name = _name;
             id = _id;

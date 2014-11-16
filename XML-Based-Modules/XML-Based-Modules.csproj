@@ -67,7 +67,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModularData.cs" />
+    <Compile Include="TelemetryData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -96,6 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ModuleSave.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="telemetry.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

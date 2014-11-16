@@ -4,7 +4,7 @@
         xmlns:local ="clr-namespace:XML_Based_Modules"
         Title="XML-Based Module Design [PROTOTYPE]" Height="350" Width="525">
     <Window.Resources>
-        <local:ModularData x:Key="modularData"/>
+        <local:TelemetryItem x:Key="TelemetryItem"/>
         <DataTemplate x:Key="mod">
             <StackPanel Background="AliceBlue">
                 <TextBlock Text="{Binding Path=Name}" />

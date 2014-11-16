@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ModularDataEntries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <DataModules>
-    <ModularData Name="Left Motor" Id="4001" Description="0 is full reverse, 128 is stop. 255 is full forward" DataType="uint8" />
-    <ModularData Name="Right Motor" Id="4002" Description="0 is full reverse, 128 is stop. 255 is full forward" DataType="uint8" />
-    <ModularData Name="Drill Temperature" Id="6018" DataType="float" />
-  </DataModules>
-</ModularDataEntries>
+<TelemetryMetaData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TelemetryData>
+    <TelemetryItem Name="Left Motor" Id="4001" Description="0 is full reverse, 128 is stop. 255 is full forward" DataType="uint8" />
+    <TelemetryItem Name="Right Motor" Id="4002" Description="0 is full reverse, 128 is stop. 255 is full forward" DataType="uint8" />
+    <TelemetryItem Name="Drill Temperature" Id="6018" DataType="float" />
+  </TelemetryData>
+</TelemetryMetaData>
