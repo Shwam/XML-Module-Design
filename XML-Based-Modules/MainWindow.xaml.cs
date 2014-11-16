@@ -12,7 +12,7 @@ namespace XML_Based_Modules
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ModularDataEntries xi;
+        public TelemetryMetaData xi;
         public string path = Directory.GetCurrentDirectory() + "../../../";
 
         public MainWindow()
@@ -24,8 +24,8 @@ namespace XML_Based_Modules
             string xml = xdoc.InnerXml;
             WriteLine("Loaded default telemetry data");
 
-            XmlSerializer serializer = new XmlSerializer(typeof(ModularDataEntries));
-            xi = (ModularDataEntries)serializer.Deserialize(new StringReader(xml));
+            XmlSerializer serializer = new XmlSerializer(typeof(TelemetryMetaData));
+            xi = (TelemetryMetaData)serializer.Deserialize(new StringReader(xml));
             lb.DataContext = xi.TelemetryData;
         }
 
@@ -35,8 +35,8 @@ namespace XML_Based_Modules
             xdoc.Load(path + "ModuleSave.xml");
             string xml = xdoc.InnerXml;
 
-            XmlSerializer serializer = new XmlSerializer(typeof(ModularDataEntries));
-            xi = (ModularDataEntries)serializer.Deserialize(new StringReader(xml));
+            XmlSerializer serializer = new XmlSerializer(typeof(TelemetryMetaData));
+            xi = (TelemetryMetaData)serializer.Deserialize(new StringReader(xml));
             lb.DataContext = xi.TelemetryData;
             WriteLine("Loaded custom telemetry data");
         }
@@ -99,7 +99,7 @@ namespace XML_Based_Modules
 
         private void _save_Click(object sender, RoutedEventArgs e)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(ModularDataEntries));
+            XmlSerializer serializer = new XmlSerializer(typeof(TelemetryMetaData));
             System.IO.StreamWriter file = new System.IO.StreamWriter(path + "ModuleSave.xml");
             serializer.Serialize(file, xi);
             file.Close();
