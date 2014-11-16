@@ -38,26 +38,26 @@ namespace XML_Based_Modules
             dataType = _dataType;
         }
 
-        [XmlAttribute]
+        [XmlElement]
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
 
-        [XmlAttribute]
+        [XmlElement]
         public int Id
         {
             get { return id; }
             set { id = value; }
         }
-        [XmlAttribute]
+        [XmlElement]
         public string Description
         {
             get { return description; }
             set { description = value; }
         }
-        [XmlAttribute]
+        [XmlElement]
         public string DataType
         {
             get { return dataType; }
