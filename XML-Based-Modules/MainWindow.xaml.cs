@@ -117,7 +117,7 @@ namespace XML_Based_Modules
             {
                 TelemetryItem item = (new TelemetryItem(_name.Text, id, _desc.Text, _datatype.Text));
                 xi.TelemetryData.Add(item);
-                WriteLine("Added " + item.Name + "to telemetry data");
+                WriteLine("Added " + item.Name + " to telemetry data");
             }
 
         }
