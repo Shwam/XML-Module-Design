@@ -124,10 +124,19 @@ namespace XML_Based_Modules
 
         private void _save_Click(object sender, RoutedEventArgs e)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(TelemetryMetaData));
-            System.IO.StreamWriter file = new System.IO.StreamWriter(path + "ModuleSave.xml");
-            serializer.Serialize(file, xi);
-            file.Close();
+            try
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(TelemetryMetaData));
+                System.IO.StreamWriter file = new System.IO.StreamWriter(path + "ModuleSave.xml");
+                serializer.Serialize(file, xi);
+                file.Close();
+                WriteLine("Successfully overrode ModuleSave.xml");
+            }
+            catch(Exception _e)
+            {
+                WriteLine("Error - could not save ModuleSave.xml");
+                WriteLine(_e.InnerException.ToString());
+            }
         }
 
         private void _remove_Click(object sender, RoutedEventArgs e)
