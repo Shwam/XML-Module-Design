@@ -28,6 +28,7 @@ namespace XML_Based_Modules
         private int id;
         private string description;
         private string dataType;
+        private dynamic value;
 
         public TelemetryItem() { }
         public TelemetryItem(string _name, int _id, string _description, string _dataType)
@@ -62,6 +63,12 @@ namespace XML_Based_Modules
         {
             get { return dataType; }
             set { dataType = value; }
+        }
+
+        public dynamic Value
+        {
+            get { return value; }
+            set { this.value = value; }
         }
 
         public override string ToString()

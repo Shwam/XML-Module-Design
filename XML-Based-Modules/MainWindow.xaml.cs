@@ -61,7 +61,7 @@ namespace XML_Based_Modules
             catch(XmlException _e)
             {
                 Clear();
-                WriteLine("ERROR: reading XML MetaData");
+                WriteLine("ERROR: Could not deserialize Telemetry MetaData");
                 WriteLine("Please verify ModuleSave.xml is formatted correctly");
             }
         }
