@@ -83,24 +83,34 @@ namespace XML_Based_Modules
             switch (DataType)
             {
                 case "boolean":
+                    value = BitConverter.ToBoolean(_value, 0);
                     break;
                 case "char":
+                    value = BitConverter.ToChar(_value, 0);
                     break;
                 case "single":
+                    value = BitConverter.ToSingle(_value, 0);
                     break;
                 case "double":
+                    value = BitConverter.ToDouble(_value, 0);
                     break;
                 case "int16":
+                    value = BitConverter.ToInt16(_value, 0);
                     break;
                 case "int32":
+                    value = BitConverter.ToInt32(_value, 0);
                     break;
                 case "int64":
+                    value = BitConverter.ToInt64(_value, 0);
                     break;
                 case "uint16":
+                    value = BitConverter.ToUInt16(_value, 0);
                     break;
                 case "uint32":
+                    value = BitConverter.ToUInt32(_value, 0);
                     break;
                 case "uint64":
+                    value = BitConverter.ToUInt64(_value, 0);
                     break;
             }
         }
