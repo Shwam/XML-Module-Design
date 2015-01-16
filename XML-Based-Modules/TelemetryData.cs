@@ -24,7 +24,6 @@ namespace XML_Based_Modules
 
     public class TelemetryItem
     {
-        enum DataTypes { Boolean, Char, Double, Int16, Int32, Int64, Single, UInt16, UInt32, UInt64, String }
         private string name;
         private int id;
         private string description;
