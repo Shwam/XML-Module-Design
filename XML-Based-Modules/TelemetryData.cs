@@ -33,10 +33,10 @@ namespace XML_Based_Modules
         public TelemetryItem() { }
         public TelemetryItem(byte[] _name, byte[] _id, byte[] _description, byte[] _dataType)
         {
-            name = string.Join("", _name);
+            name = System.Text.Encoding.UTF8.GetString(_name);
             id = BitConverter.ToInt32(_id, 0);
-            description = string.Join("", _description);
-            dataType = string.Join("", _dataType);
+            description = System.Text.Encoding.UTF8.GetString(_description);
+            dataType = System.Text.Encoding.UTF8.GetString(_dataType);
         }
         public TelemetryItem(string _name, int _id, string _description, string _dataType)
         {
