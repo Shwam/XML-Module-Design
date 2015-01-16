@@ -34,7 +34,7 @@ namespace XML_Based_Modules
         public TelemetryItem() { }
         public TelemetryItem(byte[] _name, byte[] _id, byte[] _description, byte[] _dataType)
         {
-            name = string.Join(",", _name);
+            name = string.Join("", _name);
             id = BitConverter.ToInt32(_id, 0);
             description = string.Join("", _description);
             dataType = string.Join("", _dataType);
@@ -77,6 +77,33 @@ namespace XML_Based_Modules
         {
             get { return value; }
             set { this.value = value; }
+        }
+
+        public void SetValue(byte[] _value)
+        {
+            switch (DataType)
+            {
+                case "boolean":
+                    break;
+                case "char":
+                    break;
+                case "single":
+                    break;
+                case "double":
+                    break;
+                case "int16":
+                    break;
+                case "int32":
+                    break;
+                case "int64":
+                    break;
+                case "uint16":
+                    break;
+                case "uint32":
+                    break;
+                case "uint64":
+                    break;
+            }
         }
 
         public override string ToString()
