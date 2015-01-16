@@ -30,8 +30,15 @@ namespace XML_Based_Modules
         private string description;
         private string dataType;
         private dynamic value;
-
+        
         public TelemetryItem() { }
+        public TelemetryItem(byte[] _name, byte[] _id, byte[] _description, byte[] _dataType)
+        {
+            name = string.Join(",", _name);
+            id = BitConverter.ToInt32(_id, 0);
+            description = string.Join("", _description);
+            dataType = string.Join("", _dataType);
+        }
         public TelemetryItem(string _name, int _id, string _description, string _dataType)
         {
             name = _name;
