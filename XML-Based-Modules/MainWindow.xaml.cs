@@ -20,25 +20,50 @@ namespace XML_Based_Modules
             InitializeComponent();
 
             XmlDocument xdoc = new XmlDocument();
-            xdoc.Load(path + "telemetry.xml");
-            string xml = xdoc.InnerXml;
-            WriteLine("Loaded default telemetry data");
+            try
+            {
+                xdoc.Load(path + "telemetry.xml");
+                string xml = xdoc.InnerXml;
+                WriteLine("Loaded default telemetry data");
 
-            XmlSerializer serializer = new XmlSerializer(typeof(TelemetryMetaData));
-            xi = (TelemetryMetaData)serializer.Deserialize(new StringReader(xml));
-            lb.DataContext = xi.TelemetryData;
+                XmlSerializer serializer = new XmlSerializer(typeof(TelemetryMetaData));
+                xi = (TelemetryMetaData)serializer.Deserialize(new StringReader(xml));
+                lb.DataContext = xi.TelemetryData;
+            }
+            catch(FileNotFoundException e)
+            {
+                Clear();
+                WriteLine("Could not find" + e.FileName);
+                WriteLine("Please check that the file exists and that the correct filename is specified");
+            }
+            
         }
 
         private void _loadModules(object sender, RoutedEventArgs e)
         {
-            XmlDocument xdoc = new XmlDocument();
-            xdoc.Load(path + "ModuleSave.xml");
-            string xml = xdoc.InnerXml;
+            try
+            {
+                XmlDocument xdoc = new XmlDocument();
+                xdoc.Load(path + "ModuleSave.xml");
+                string xml = xdoc.InnerXml;
 
-            XmlSerializer serializer = new XmlSerializer(typeof(TelemetryMetaData));
-            xi = (TelemetryMetaData)serializer.Deserialize(new StringReader(xml));
-            lb.DataContext = xi.TelemetryData;
-            WriteLine("Loaded custom telemetry data");
+                XmlSerializer serializer = new XmlSerializer(typeof(TelemetryMetaData));
+                xi = (TelemetryMetaData)serializer.Deserialize(new StringReader(xml));
+                lb.DataContext = xi.TelemetryData;
+                WriteLine("Loaded custom telemetry data");
+            }
+            catch(FileNotFoundException _e)
+            {
+                Clear();
+                WriteLine("ERROR: Could not load custom telemetry data");
+                WriteLine("Please verify file location before continuing");
+            }
+            catch(XmlException _e)
+            {
+                Clear();
+                WriteLine("ERROR: Could not deserialize Telemetry MetaData");
+                WriteLine("Please verify ModuleSave.xml is formatted correctly");
+            }
         }
 
         private void WriteLine(string s)
@@ -88,21 +113,30 @@ namespace XML_Based_Modules
                 WriteLine("id OverflowException (int32)");
             }
 
-            if (id > 0)
+            if (id >= 0)
             {
                 TelemetryItem item = (new TelemetryItem(_name.Text, id, _desc.Text, _datatype.Text));
                 xi.TelemetryData.Add(item);
-                WriteLine("Added " + item.Name + "to telemetry data");
+                WriteLine("Added " + item.Name + " to telemetry data");
             }
 
         }
 
         private void _save_Click(object sender, RoutedEventArgs e)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(TelemetryMetaData));
-            System.IO.StreamWriter file = new System.IO.StreamWriter(path + "ModuleSave.xml");
-            serializer.Serialize(file, xi);
-            file.Close();
+            try
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(TelemetryMetaData));
+                System.IO.StreamWriter file = new System.IO.StreamWriter(path + "ModuleSave.xml");
+                serializer.Serialize(file, xi);
+                file.Close();
+                WriteLine("Successfully overrode ModuleSave.xml");
+            }
+            catch(Exception _e)
+            {
+                WriteLine("Error - could not save ModuleSave.xml");
+                WriteLine(_e.InnerException.ToString());
+            }
         }
 
         private void _remove_Click(object sender, RoutedEventArgs e)
